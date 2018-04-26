@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<br>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <italic><strong><p id="yes"> </p></strong></italic>
+
+    <br><br>
+
+    <script>
+    function test() {
+      var list = [1,2,3,4]
+      var double = list.map((list) => (list*2))
+      return double
+      }
+     <!--console.log(test('x','y','z'))-->
+     <!--document.write(test('x','y','z'))-->
+     <!--window.alert(test('x','y','z'))-->
+
+     document.getElementById("yes").innerHTML = test()
+
+     </script>
+
+</head>
+<body>
+
+</body>
+</html>
