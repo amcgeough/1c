@@ -11,3 +11,14 @@ class TodoSerializer(serializers.ModelSerializer):
             'pub_date',
         )
         model = models.Question
+
+
+class TodoSerializer2(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'id',
+            'question',
+            'choice_text',
+            'compliance_status',
+        )
+        model = models.Choice

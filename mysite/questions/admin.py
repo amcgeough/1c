@@ -1,9 +1,13 @@
 from django.contrib import admin
 
-from .models import Choice, Question, SubQuestion, SubChoice
+from .models import Choice, Question, SubQuestion, SubChoice, Audit
 
 import nested_admin
 
+
+class AuditInLine(admin.TabularInline):
+    model = Audit
+    extra = 0
 
 class ChoiceInline(nested_admin.NestedTabularInline):
     model = Choice
@@ -51,8 +55,14 @@ class SubQuestionAdmin(nested_admin.NestedModelAdmin):
     list_filter = ['pub_date']
 
 
+class AuditAdmin(nested_admin.NestedModelAdmin):
+    model = Audit
+    list_filter = ['start_date']
+    filter_horizontal = ['owner', 'question']
+
 
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(SubQuestion, SubQuestionAdmin)
+admin.site.register(Audit, AuditAdmin)
 

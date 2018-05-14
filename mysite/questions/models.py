@@ -23,8 +23,7 @@ Compliance_Status = (
     ('2', 'Partially Compliant 75%'),
     ('3', 'Partially Compliant 50%'),
     ('4', 'Partially Compliant 25%'),
-    ('5', 'Non-Compliant'),
-    ('6', 'Not Applicable')
+    ('5', 'Non-Compliant')
 )
 
 Frequency = (
@@ -35,7 +34,6 @@ Frequency = (
     ('5', 'Monthly'),
     ('6', 'Yearly')
 )
-
 
 
 # Create your models here.
@@ -65,6 +63,15 @@ class Question(models.Model):
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
 
+
+class Audit(models.Model):
+    audit_name = models.CharField('Audit', max_length=200)
+    owner = models.ManyToManyField(User)
+    start_date = models.DateTimeField()
+    question = models.ManyToManyField(Question, blank=True, null=True)
+
+    def __str__(self):
+        return self.audit_name
 
 
 class Choice(models.Model):

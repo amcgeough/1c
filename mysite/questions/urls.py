@@ -15,5 +15,6 @@ from . import views
 # API Endpoint
 urlpatterns = [
     path('', views.ListTodo.as_view()),
+    path('choice', views.ListTodo2.as_view()),
     path('<int:pk>/', views.DetailTodo.as_view()),
 ]

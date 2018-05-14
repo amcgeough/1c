@@ -10,6 +10,11 @@ class ListTodo(generics.ListCreateAPIView):
     serializer_class = serializers.TodoSerializer
 
 
+class ListTodo2(generics.ListCreateAPIView):
+    queryset = models.Choice.objects.all()
+    serializer_class = serializers.TodoSerializer2
+
+
 class DetailTodo(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Question.objects.all()
     serializer_class = serializers.TodoSerializer
