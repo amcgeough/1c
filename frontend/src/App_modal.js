@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/lib/Button';
 import Modal from 'react-bootstrap/lib/Modal';
 //import Tooltip from 'react-bootstrap/lib/Tooltip';
 //import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import QuizApp from './App_quiz';
+
 
 let rand = ()=> (Math.floor(Math.random() * 35) - 10);
 
@@ -24,12 +26,14 @@ const backdropStyle = {
 const dialogStyle = function() {
   // we use some psuedo random coords so nested modals
   // don't sit right on top of each other.
-  let top = -20 + (rand());
-  let left = 50 + (rand());
+//  let top = -20 + (rand());
+//  let left = 50 + (rand());
+  let top = -20 ;
+  let left = 0 ;
 
   return {
     position: 'absolute',
-    width: 400,
+    width: 900,
     top: top + '%', left: left + '%',
     transform: `translate(-${top}%, -${left}%)`,
     border: '1px solid #e5e5e5',
@@ -117,9 +121,8 @@ class ModalExample extends React.Component {
           onHide={this.handleClose}
         >
             <div style={dialogStyle()} >
-                <h4 id='modal-label'>Text in a modal</h4>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                <ModalExample/>
+                <QuizApp/>
+
                 <Modal.Footer>
                   <Button onClick={this.handleClose}>Close</Button>
                 </Modal.Footer>
@@ -134,7 +137,6 @@ class ModalExample extends React.Component {
           onHide={this.handleClose2}
         >
             <div style={dialogStyle()} >
-                <h4 id='modal-label'>Text in a modal</h4>
 
                 {this.state.todos.map(item => (
                 <div key={item.id}>

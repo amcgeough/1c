@@ -9,6 +9,7 @@ class TodoSerializer(serializers.ModelSerializer):
             'id',
             'question_text',
             'pub_date',
+            'choice_type'
         )
         model = models.Question
 
@@ -22,3 +23,5 @@ class TodoSerializer2(serializers.ModelSerializer):
             'compliance_status',
         )
         model = models.Choice
+
+

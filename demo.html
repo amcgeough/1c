@@ -8,16 +8,10 @@
     <br><br>
 
     <script>
-    function test() {
-      var list = [1,2,3,4]
-      var double = list.map((list) => (list*2))
-      return double
-      }
-     <!--console.log(test('x','y','z'))-->
-     <!--document.write(test('x','y','z'))-->
-     <!--window.alert(test('x','y','z'))-->
-
-     document.getElementById("yes").innerHTML = test()
+    fetch('http://127.0.0.1:8000/api/combo')
+    .then(response => response.json())
+    .then(data => {
+    });     document.getElementById("yes").innerHTML = try()
 
      </script>
 
@@ -26,3 +20,12 @@
 
 </body>
 </html>
+
+    <!--function test() {-->
+      <!--var list = [1,2,3,4]-->
+      <!--var double = list.map((list) => (list*2))-->
+      <!--return double-->
+      <!--}-->
+     <!--&lt;!&ndash;console.log(test('x','y','z'))&ndash;&gt;-->
+     <!--&lt;!&ndash;document.write(test('x','y','z'))&ndash;&gt;-->
+     <!--&lt;!&ndash;window.alert(test('x','y','z'))&ndash;&gt;-->
