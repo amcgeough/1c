@@ -158,7 +158,6 @@ class ModalExample extends React.Component {
             </div>
         </Modal>
 
-
         </div>
     );
   }

@@ -5,12 +5,7 @@ from . import models
 
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = (
-            'id',
-            'question_text',
-            'pub_date',
-            'choice_type'
-        )
+        fields = ('__all__')
         model = models.Question
 
 
